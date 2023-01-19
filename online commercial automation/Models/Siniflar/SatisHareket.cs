@@ -19,8 +19,8 @@ namespace online_commercial_automation.Models.Siniflar
         public decimal ToplamTutar { get; set; }
 
         //urun cari parsonel iliskiler asagidadir
-        public ICollection<Urun> Uruns { get; set; }
-        public ICollection<Cariler> Carilers { get; set; }
-        public ICollection<personel> personels { get; set; }
+        public Urun Urun { get; set; }
+        public Cariler Carilers { get; set; }
+        public personel Personel { get; set; }
     }
 }

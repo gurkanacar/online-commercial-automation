@@ -25,7 +25,7 @@ namespace online_commercial_automation.Models.Siniflar
         public string PersonelGorsel { get; set; }
 
         //urun cari parsonel--- SatisHareket iliskisi asagidadir
-        public SatisHareket SatisHareket { get; set; }
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
 
         //personel ve departman arasindaki iliski
         public Departman Departman { get; set; }
