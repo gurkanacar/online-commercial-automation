@@ -28,7 +28,8 @@ namespace online_commercial_automation.Models.Siniflar
 
         //Iliskiler Kurulum
         //Kategori ile urun arasinda
-        public Kategori Kategori { get; set; }
+        public int Kategoriid { get; set; }
+        public virtual Kategori Kategori { get; set; }  //34
 
 
 

@@ -1,0 +1,38 @@
+﻿@using online_commercial_automation.Models.Siniflar;
+@model List<Urun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>URUN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALISFIYAT</th>
+        <th>SATISFIYAT</th>
+        <th>DURUM</th>
+        <th>KATEGORI</th>
+        <th>GORSEL</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.UrunID</td>
+            <td>@u.UrunAD</td>
+            <td>@u.Marka</td>
+            <td>@u.Stok</td>
+            <td>@u.AlisFiyat</td>
+            <td>@u.SatisFiyat</td>
+            <td>@u.Durum</td>
+            <td>@u.Kategori.KategoriAD</td>
+            <td>@u.UrunGorsel</td>
+        </tr>
+    }
+</table>
+<a href="/UrunKontroller/YeniUrun/" class="btn btn-info">Yeni Urun Ekle</a>
+
