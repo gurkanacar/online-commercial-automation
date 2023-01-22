@@ -44,6 +44,34 @@ namespace online_commercial_automation.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        //GUNCELLEME
+        public ActionResult UrunGetir(int id)
+        {
+            List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.KategoriAD,
+                                               Value = x.KategoriID.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
+
+            var urundeger = c.Uruns.Find(id);
+            return View("UrunGetir", urundeger);
+        }
+        public ActionResult UrunGuncelle(Urun p)
+        {
+            var urn = c.Uruns.Find(p.UrunID);
+            urn.AlisFiyat = p.AlisFiyat;
+            urn.Durum = p.Durum;
+            urn.Kategoriid = p.Kategoriid;
+            urn.Marka = p.Marka;
+            urn.SatisFiyat = p.SatisFiyat;
+            urn.Stok = p.Stok;
+            urn.UrunAD = p.UrunAD;
+            urn.UrunGorsel = p.UrunGorsel;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }

@@ -272,6 +272,7 @@
     <Content Include="Views\Kategori\KategoriGetir.cshtml" />
     <Content Include="Views\UrunKontroller\Index.cshtml" />
     <Content Include="Views\UrunKontroller\YeniUrun.cshtml" />
+    <Content Include="Views\UrunKontroller\UrunGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
