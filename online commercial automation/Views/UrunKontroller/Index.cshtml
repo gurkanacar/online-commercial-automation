@@ -18,6 +18,8 @@
         <th>DURUM</th>
         <th>KATEGORI</th>
         <th>GORSEL</th>
+        <th>SIL</th>
+        <th>GUNCELLE</th>
     </tr>
     @foreach (var u in Model)
     {
@@ -31,6 +33,12 @@
             <td>@u.Durum</td>
             <td>@u.Kategori.KategoriAD</td>
             <td>@u.UrunGorsel</td>
+            <td>
+                <a href="/UrunKontroller/UrunSil/@u.UrunID" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/UrunKontroller/UrunGetir/@u.UrunID" class="btn btn-success">Guncelle</a>
+            </td>
         </tr>
     }
 </table>
