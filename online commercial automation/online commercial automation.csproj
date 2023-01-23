@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\UrunKontrollerController.cs" />
@@ -273,6 +274,7 @@
     <Content Include="Views\UrunKontroller\Index.cshtml" />
     <Content Include="Views\UrunKontroller\YeniUrun.cshtml" />
     <Content Include="Views\UrunKontroller\UrunGetir.cshtml" />
+    <Content Include="Views\Departman\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
