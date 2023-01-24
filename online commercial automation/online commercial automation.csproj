@@ -275,6 +275,8 @@
     <Content Include="Views\UrunKontroller\YeniUrun.cshtml" />
     <Content Include="Views\UrunKontroller\UrunGetir.cshtml" />
     <Content Include="Views\Departman\Index.cshtml" />
+    <Content Include="Views\Departman\DepartmanEkle.cshtml" />
+    <Content Include="Views\Departman\DepartmanGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

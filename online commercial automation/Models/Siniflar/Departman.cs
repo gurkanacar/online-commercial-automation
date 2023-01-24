@@ -15,7 +15,7 @@ namespace online_commercial_automation.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string DepartmanAd { get; set; }
-
+        public bool Durum { get; set; }
         //personel ve departman arasindaki iliski
         public ICollection<personel> personels { get; set; }
     }
