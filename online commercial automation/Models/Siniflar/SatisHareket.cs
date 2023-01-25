@@ -19,8 +19,11 @@ namespace online_commercial_automation.Models.Siniflar
         public decimal ToplamTutar { get; set; }
 
         //urun cari parsonel iliskiler asagidadir
-        public Urun Urun { get; set; }
-        public Cariler Carilers { get; set; }
-        public personel Personel { get; set; }
+        public int Urunid { get; set; }
+        public int Cariid { get; set; }
+        public int Personelid { get; set; }
+        public virtual Urun Urun { get; set; }
+        public virtual Cariler Carilers { get; set; }
+        public virtual personel Personel { get; set; }
     }
 }

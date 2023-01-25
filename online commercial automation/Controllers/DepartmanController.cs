@@ -49,5 +49,21 @@ namespace online_commercial_automation.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult DepartmanDetay(int id)
+        {
+            var degerler = c.personels.Where(x => x.PersonelID == id).ToList();
+            var dpt = c.Departmen.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
+            ViewBag.d = dpt;
+            return View(degerler);
+        }
+        public ActionResult DepartmanPersonelSatis(int id)
+        {
+            var degerler = c.SatisHarekets.Where(x => x.Personelid == id).ToList();
+            var per = c.personels.Where(x => x.PersonelID == id).Select(y => y.PersonelAD +" "+ y.PersonelSoyad).FirstOrDefault();
+            ViewBag.dpers = per;
+            return View(degerler);
+        }
+
+
     }
 }
