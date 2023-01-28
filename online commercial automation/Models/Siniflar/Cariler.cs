@@ -28,6 +28,9 @@ namespace online_commercial_automation.Models.Siniflar
         [StringLength(50)]
         public string CariMail { get; set; }
 
+        public bool Durum { get; set; }
+
+
         //urun cari parsonel--- SatisHareket iliskisi asagidadir
         public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
