@@ -36,6 +36,35 @@ namespace online_commercial_automation.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult CariGetir(int id)
+        {
+            var cari = c.Carilers.Find(id);
+            return View("CariGetir", cari);
+        }
+        public ActionResult CariGuncelle(Cariler p)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("CariGetir");
+            }
+            else
+            {
+                var cari = c.Carilers.Find(p.CariID);
+                cari.CariAd = p.CariAd;
+                cari.CariSoyad = p.CariSoyad;
+                cari.CariSehir = p.CariSehir;
+                cari.CariMail = p.CariMail;
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }           
+        }
+        public ActionResult MusteriSatis(int id)
+        {
+            var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
+            var cr = c.Carilers.Where(x => x.CariID == id).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.cari = cr;
+            return View(degerler);
+        }
 
     }
 }
