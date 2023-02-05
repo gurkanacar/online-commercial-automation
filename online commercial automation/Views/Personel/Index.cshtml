@@ -1,0 +1,33 @@
+﻿@using online_commercial_automation.Models.Siniflar
+@model List<personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>PERSONEL ADI</th>
+        <th>SOYAD</th>
+        <th>GORSEL</th>
+        <th>DEPARTMAN</th>
+        <th>GUNCELLE</th>
+        <th>SATISLAR</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.PersonelID</td>
+            <td>@k.PersonelAD</td>
+            <td>@k.PersonelSoyad</td>
+            <td>@k.PersonelAD</td>
+            <td>@k.Departman.DepartmanAd</td>
+            <td><a href="/Personel/PersonelGetir/@k.PersonelID" class="btn btn-warning">Guncelle</a></td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@k.PersonelID" class="btn btn-success" style="background-color:lightcoral; color:white;">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Personel/PersonelEkle" class="btn btn-info">Personel Ekle</a>
+
