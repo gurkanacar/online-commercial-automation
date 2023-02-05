@@ -1,0 +1,39 @@
+﻿@using online_commercial_automation.Models.Siniflar;
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>URUN</th>
+        <th>CARI</th>
+        <th>PERSONEL</th>
+        <th>ADET</th>
+        <th>FIYAT</th>
+        <th>TOPLAM</th>
+        <th>TARIH</th>
+        <th>GUNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.SatisID</td>
+            <td>@k.Urun.UrunAD</td>
+            <td>@k.Carilers.CariAd @k.Carilers.CariSoyad</td>
+            <td>@k.Personel.PersonelAD @k.Personel.PersonelSoyad</td>
+            <td>@k.Adet</td>
+            <td>@k.Fiyat</td>
+            <td>@k.ToplamTutar</td>
+            <td>@k.Tarih</td>
+            <td><a href="/Satis/SatisGetir/@k.Carilers" class="btn btn-warning">Guncelle</a></td>
+            <td><a href="/Satis/SatisDetay/@k.Carilers" class="btn btn-success" style="background-color:lightcoral; color:white;">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Satis/YeniSatis" class="btn btn-info">Yeni Satis Yap</a>
+
