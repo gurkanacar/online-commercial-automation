@@ -71,7 +71,7 @@ namespace online_commercial_automation.Controllers
             urn.UrunGorsel = p.UrunGorsel;
             c.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }  
 
     }
 }

@@ -1,0 +1,39 @@
+﻿@using online_commercial_automation.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "SatisDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Satis Detayi</h2>
+<br />
+<table class="table table-condensed">
+    <tr>
+        <th>Satis Id</th>
+        <th>Urun</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdir</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SatisID</td>
+            <td>@x.Urun.UrunAD</td>
+            <td>@x.Carilers.CariAd  @x.Carilers.CariSoyad</td>
+            <td>@x.Personel.PersonelAD @x.Personel.PersonelSoyad</td>
+            <td>@x.Fiyat</td>
+            <td>@x.Adet</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarih</td>
+        </tr>
+    }
+
+</table>
+<button class="btn btn-default" style="background-color:dodgerblue">Yazdir</button>
