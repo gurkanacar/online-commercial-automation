@@ -1,0 +1,42 @@
+﻿@using online_commercial_automation.Models.Siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>SERI NO</th>
+        <th>SIRA NO</th>
+        <th>VERGI DAIRESI</th>
+        <th>TARIH</th>
+        <th>SAAT</th>
+        <th>TESLIM EDEN</th>
+        <th>TESLIM ALAN</th>
+        <th>TOPLAM</th>
+        <th>GUNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.FaturaID</td>
+            <td>@k.FaturaSeriNo</td>
+            <td>@k.FaturaSiraNo</td>
+            <td>@k.VergiDairesi</td>
+            <td>@k.Tarih</td>
+            <td>@k.Saat</td>
+            <td>@k.TeslimEden</td>
+            <td>@k.TeslimAlan</td>
+            <td>@k.Toplam</td>
+            <td><a href="/Fatura/DepartmanGetir/@k.FaturaID" class="btn btn-warning">Guncelle</a></td>
+            <td><a href="/Fatura/DepartmanDetay/@k.FaturaID" class="btn btn-success" style="background-color:lightcoral; color:white;">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Fatura/FaturaEkle" class="btn btn-info">Yeni Fatura Giris</a>
+
+

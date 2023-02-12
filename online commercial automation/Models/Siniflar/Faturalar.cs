@@ -24,7 +24,10 @@ namespace online_commercial_automation.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string VergiDairesi { get; set; }
-        public DateTime Saat { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public String Saat { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -36,6 +39,8 @@ namespace online_commercial_automation.Models.Siniflar
         //Iliskiler Kurulum
         //fatura ile faturakalem arasinda
         //bir faturada   1 den fazla fatura kalem girdisi vardir.
+        public decimal Toplam { get; set; }
+
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
 
     }
