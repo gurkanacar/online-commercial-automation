@@ -22,6 +22,7 @@ namespace online_commercial_automation.Models.Siniflar
         //Iliskiler Kurulum
         //fatura ile faturakalem arasinda
         //bir faturada   1 den fazla fatura kalem girdisi vardir.
-        public Faturalar Faturalar { get; set; }
+        public int Faturaid { get; set; }
+        public virtual Faturalar Faturalar { get; set; }
     }
 }
